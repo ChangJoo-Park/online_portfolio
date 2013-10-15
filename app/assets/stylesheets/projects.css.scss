@@ -1,0 +1,45 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$box-border-color: 1px solid black;
+$eachBox-margin-top : 30px;
+.purr{
+	position: fixed;
+  top: 30px;
+  right: 100px;
+  width: 250px;
+  padding: 20px;
+  background-color: #FCC;
+  border: solid 2px #666;
+  &:first-letter { text-transform: uppercase };	
+}
+
+#projects{
+  list-style: none;
+  li{
+    .handle{
+    }
+    .handle:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+.image{
+  max-height: 400px;
+  min-height: 400px;
+  img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div{
+    height: 400px;
+  }
+}
+.subimages{
+  list-style: none;
+}
+.new_sub_image{
+  float: none;
+  clear: both;
+}

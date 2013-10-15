@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  caption: MyString
+  selected: false
+  order: 1
+  project_id: 
+
+two:
+  caption: MyString
+  selected: false
+  order: 1
+  project_id: 

@@ -1,0 +1,83 @@
+<div class="container">
+	<h1 class="title"><%= image_tag @project.thumbnail.url, height: 100 %><%= best_in_place @project, :title, type: :input, class:'text-center' %></h1>
+	<%= link_to 'Change Thumbnail', projects_path, data: { toggle: 'modal', target:"#new_thumbnail" },remote: true, class: 'btn btn-xs btn-success' %>
+	<%= render "modal_thumbnail", project: @project %>
+	<hr>
+	<div class="image col-md-12 col-lg-12">
+	<% unless @project.sub_images.empty? %>
+		<%= render @project.sub_images.first %>
+		asdfj
+	<% end %>
+	</div>
+	
+	<div>
+		<ul class="subimages">
+			<%= render @project.sub_images %>
+		</ul>
+	</div>
+
+
+	<%= form_for([@project, @project.sub_images.build])  do |f| %>
+		<p>
+			<%= f.label :image %>
+			<%= f.file_field :image %>		
+		</p>
+		<div id="holder">
+			<p id="upload"></p>		
+			<p id="progress"></p>
+		</div>
+		<p>
+			<%= f.label :caption %>
+			<%= f.text_field :caption %>
+		</p>
+		<p>
+			<%= f.label :selected %>
+			<%= f.check_box :selected %>
+		</p>
+		<p>
+			<%= f.label :order %>
+			<%= f.text_field :order %>
+		</p>
+		<%= f.submit %>
+	<% end %>
+	<div class="details">
+		<p>
+			<strong>Description</strong><br/>
+			<%= best_in_place @project, :description, type: :textarea, nil: 'Insert Some text' %>
+		</p>
+		<p>
+			<strong>URL</strong><br/>
+			<%= best_in_place @project, :url, type: :input, nil: 'Insert Some text' %>
+		</p>
+
+		<p>
+			<strong>Work For</strong><br/>
+			<%= best_in_place @project, :work_for, type: :input, nil: 'Insert Some text' %>
+		</p>
+
+		<p>
+			<strong>Type</strong><br/>
+			<%= best_in_place @project, :types, type: :input, nil: 'Insert Some text' %>
+		</p>
+	</div>
+
+	<div class="layouts">
+		<p>
+			<strong>Layouts</strong><br/>
+			<%= best_in_place @project, :layouts, type: :select, collection: [[1,"Layout 1"], [2, "Layout 2"]], nil:'Select Default Layout' %>
+		</p>
+	</div>
+
+	<div class="visibility">
+	<p>
+		<strong>visibility</strong><br/>
+		<%= best_in_place @project, :visibility, type: :checkbox, collection: %w[Visible Unvisible] %>
+	</p>
+	</div>
+<h2>Add SubImage</h2>
+
+
+<%= link_to 'Back', projects_path %>
+| <%= link_to 'Edit', edit_project_path(@project) %>
+| <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure ? ' } %>
+</div>

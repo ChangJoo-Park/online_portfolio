@@ -1,0 +1,14 @@
+<ul id="projects">
+<% @projects.each do |project| %>
+<li id="project_<%= project.id %>" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+		<span class="handle glyphicon glyphicon-pushpin"></span>
+		<%= project.title %>
+
+		<%= link_to '', project_path(project), method: :delete, remote: true, class:'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
+
+		<%= link_to (image_tag project.thumbnail.url(:thumb) ),project %>
+		<% link_to 'Edit', edit_project_path(project) %>
+		
+</li>
+<% end %>
+</ul>

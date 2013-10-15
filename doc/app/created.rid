@@ -1,0 +1,12 @@
+Fri, 11 Oct 2013 06:48:48 +0000
+README.rdoc	Mon, 30 Sep 2013 06:44:25 +0000
+app/controllers/application_controller.rb	Mon, 30 Sep 2013 06:44:25 +0000
+app/controllers/projects_controller.rb	Fri, 04 Oct 2013 10:07:08 +0000
+app/controllers/sub_images_controller.rb	Fri, 04 Oct 2013 13:04:54 +0000
+app/controllers/welcome_controller.rb	Mon, 30 Sep 2013 06:46:31 +0000
+app/helpers/application_helper.rb	Mon, 30 Sep 2013 06:44:25 +0000
+app/helpers/projects_helper.rb	Tue, 08 Oct 2013 03:16:11 +0000
+app/helpers/sub_images_helper.rb	Mon, 30 Sep 2013 08:13:21 +0000
+app/helpers/welcome_helper.rb	Mon, 30 Sep 2013 06:46:32 +0000
+app/models/project.rb	Tue, 08 Oct 2013 11:19:26 +0000
+app/models/sub_image.rb	Fri, 04 Oct 2013 13:03:37 +0000

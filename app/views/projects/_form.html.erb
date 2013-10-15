@@ -1,0 +1,63 @@
+<%= form_for @project, html: { multipart: true } do |f| %>
+  <% if @project.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@project.errors.count, "error") %> prohibited
+      this project from being saved:</h2>
+    <ul>
+    <% @project.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+	<p>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<% f.label :thumbnail_url %>
+		<% f.text_field :thumbnail_url %>
+	</p>
+	<p>
+		<%= f.label :thumbnail %>
+		<%= f.file_field :thumbnail %>
+		<%= label_tag :chk_thumbnail, "Remove Thumbnail"  %>
+		<%= check_box_tag :chk_thumbnail, value=true, checked = false%>
+	</p>
+	<p>
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</p>
+	<p>
+		<%= f.label :url %>
+		<%= f.text_field :url %>
+	</p>
+	<p>
+		<%= f.label :work_for %>
+		<%= f.text_field :work_for %>
+	</p>
+	<p>
+		<%= f.label :types %>
+		<%= f.text_field :types %>
+	</p>
+	<p>
+		<%= f.label :layouts %>
+		<%= f.radio_button :layouts, 'layout1',checked: true %><%= f.label :layouts_layout1, "Layout 1" %>
+		<%= f.radio_button :layouts, 'layout2',checked: false %><%= f.label :layouts_layout2, "Layout 2" %>
+		
+	</p>
+	<p>
+		<%= f.label :visibility%>
+		<%= f.check_box :visibility %>
+	</p>
+
+	<p>
+		<%= f.label :position%>
+		<%= f.text_field :position %>
+	</p>
+
+	<%= f.submit %>
+
+<% end %>
+
+<%= debug @project %>
