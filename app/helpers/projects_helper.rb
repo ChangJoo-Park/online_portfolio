@@ -22,4 +22,7 @@ module ProjectsHelper
 	def before_thumbnail(project)
 		project
 	end
+
+	def sub_image_list(project)
+	end
 end

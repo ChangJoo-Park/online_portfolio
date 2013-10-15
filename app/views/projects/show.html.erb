@@ -1,22 +1,17 @@
 <div class="container">
-	<h1 class="title"><%= image_tag @project.thumbnail.url, height: 100 %><%= best_in_place @project, :title, type: :input, class:'text-center' %></h1>
-	<%= link_to 'Change Thumbnail', projects_path, data: { toggle: 'modal', target:"#new_thumbnail" },remote: true, class: 'btn btn-xs btn-success' %>
-	<%= render "modal_thumbnail", project: @project %>
+	<h1 class="title"><%= best_in_place @project, :title, type: :input %></h1>
 	<hr>
 	<div class="image col-md-12 col-lg-12">
-	<% unless @project.sub_images.empty? %>
-		<%= render @project.sub_images.first %>
-		asdfj
+	<% if @project.sub_images.empty? %>
+	비어있음
+	<% else %>
+		<ul class="sub_images">
+		<%= render @project.sub_images %>
+		</ul>
 	<% end %>
 	</div>
-	
-	<div>
-		<ul class="subimages">
-			<%= render @project.sub_images %>
-		</ul>
-	</div>
-
-
+	<hr>
+	<div class="add_sub_images">
 	<%= form_for([@project, @project.sub_images.build])  do |f| %>
 		<p>
 			<%= f.label :image %>
@@ -40,6 +35,7 @@
 		</p>
 		<%= f.submit %>
 	<% end %>
+	</div>
 	<div class="details">
 		<p>
 			<strong>Description</strong><br/>
@@ -74,7 +70,6 @@
 		<%= best_in_place @project, :visibility, type: :checkbox, collection: %w[Visible Unvisible] %>
 	</p>
 	</div>
-<h2>Add SubImage</h2>
 
 
 <%= link_to 'Back', projects_path %>

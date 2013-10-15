@@ -36,10 +36,19 @@ $eachBox-margin-top : 30px;
     height: 400px;
   }
 }
-.subimages{
+.sub_images{
   list-style: none;
+  float: left;
 }
-.new_sub_image{
+.add_sub_images{
   float: none;
   clear: both;
+}
+
+.details{
+  p{
+    span{
+      font-size: 20px;
+    }
+  }
 }
