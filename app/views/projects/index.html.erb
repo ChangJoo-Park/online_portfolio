@@ -1,5 +1,4 @@
 <div class="container">
-
 <h1>Listing Projects <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary" %></span></h1>
 <%= render "modal_new" %>
 <hr>
@@ -7,8 +6,4 @@
 		<%= render 'list' %>
 	</div>
 </div>
-
-
-<% content_for :javascript_include do %>
-	<%= javascript_include_tag "sort.js" %>
-<% end %>
+<%= debug @project %>
