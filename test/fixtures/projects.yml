@@ -1,19 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  title: MyString
-  description: MyText
-  url: MyString
-  work_for: MyString
-  type: 
-  layouts: MyString
-  visibility: false
-
-two:
-  title: MyString
-  description: MyText
-  url: MyString
-  work_for: MyString
-  type: 
-  layouts: MyString
-  visibility: false
+uidesinger:
+  title: Web UI Design
+  description: Something makes icons
+  url: www.naver.com
+  work_for: Company
+  types: UI
+  layouts: layout1
+  visibility: true

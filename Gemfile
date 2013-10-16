@@ -53,3 +53,6 @@ gem 'better_errors'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem "acts_as_list", git: "git://github.com/swanandp/acts_as_list.git"
 gem 'rails-gallery'
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
