@@ -52,7 +52,10 @@ gem 'better_errors'
 # Use Paperclip for upload multiple images 
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem "acts_as_list", git: "git://github.com/swanandp/acts_as_list.git"
-gem 'rails-gallery'
+gem 'galleria-rails', github: 'albandiguer/galleria-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
+
+
+gem 'holder_rails'

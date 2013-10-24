@@ -1,6 +1,6 @@
 <ul id="projects">
 <% @projects.each do |project| %>
-<li id="project_<%= project.id %>" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center">
+<li id="project_<%= project.id %>" class="col-xs-1 col-sm-4 col-md-4 col-lg-4 text-center">
 		<%= project.title %>
 		<%= link_to '', project_path(project), method: :delete, remote: true, class:'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
 		<%= link_to (image_tag project.thumbnail.url(:small) ),project %>

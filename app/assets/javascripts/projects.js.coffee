@@ -9,3 +9,6 @@ jQuery ->
 (($) ->
   $("#new_project").modal()
 ) jQuery
+
+$(document).bind 'page:change', ->
+  Holder.run()

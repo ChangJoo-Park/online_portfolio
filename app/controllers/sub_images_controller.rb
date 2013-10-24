@@ -2,7 +2,7 @@ class SubImagesController < ApplicationController
 	def create
 		@project = Project.find(params[:project_id])
 		@image = @project.sub_images.create(image_params)
-		redirect_to project_path(@project)
+		redirect_to @project
 	end
 
 	def destroy
