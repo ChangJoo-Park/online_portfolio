@@ -1,7 +1,6 @@
 class Project < ActiveRecord::Base
 	has_many :sub_images, dependent: :destroy
 	validates :title, presence: true
-	validates :title, length: { minimum: 5 }
   # TODO Select sizes
 	has_attached_file :thumbnail,
 										styles: { medium: "600x600", thumb:"200x150#",

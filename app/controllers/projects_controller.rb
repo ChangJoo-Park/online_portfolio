@@ -45,8 +45,7 @@ class ProjectsController < ApplicationController
 
 		respond_to do |format|
 			if @project.save
-				format.html { redirect_to project_path(@project) }
-				format.json { head :ok }
+				format.html { redirect_to @project }
 				format.js
 			else
 				render 'new'
