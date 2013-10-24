@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20131004110415) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
-    t.boolean  "remove_thumbnail"
     t.integer  "position"
   end
 
