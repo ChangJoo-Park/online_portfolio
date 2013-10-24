@@ -32,9 +32,6 @@ $eachBox-margin-top : 30px;
     margin-left: auto;
     margin-right: auto;
   }
-  div{
-    height: 400px;
-  }
 }
 .sub_images{
   list-style: none;
@@ -50,4 +47,8 @@ $eachBox-margin-top : 30px;
       font-size: 20px;
     }
   }
+}
+
+#galleria{
+  width: 100%; height: 600px; background: #000;
 }

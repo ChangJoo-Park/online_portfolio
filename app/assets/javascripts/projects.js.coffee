@@ -4,7 +4,6 @@
 # Using project detail page, change data with ajax
 jQuery ->
   $('.best_in_place').best_in_place()
-
 # click 'New Project' Button -> Create new project 
 (($) ->
   $("#new_project").modal()
@@ -12,3 +11,6 @@ jQuery ->
 
 $(document).bind 'page:change', ->
   Holder.run()
+
+$ ->
+	Galleria.run('#galleria')

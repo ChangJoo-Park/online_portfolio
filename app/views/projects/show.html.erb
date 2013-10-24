@@ -5,9 +5,9 @@
 	<% if @project.sub_images.empty? %>
 		<%= holder_tag '100%x400','Please add first image', 'social' %>
 	<% else %>
-		<ul class="sub_images">
+		<div id="galleria" class="sub_images">
 			<%= render @project.sub_images %>
-		</ul>
+		</div>
 	<% end %>
 	</div>
 	<hr>
