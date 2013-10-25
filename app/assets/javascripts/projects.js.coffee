@@ -11,6 +11,3 @@ jQuery ->
 
 $(document).bind 'page:change', ->
   Holder.run()
-
-$ ->
-	Galleria.run('#galleria')
