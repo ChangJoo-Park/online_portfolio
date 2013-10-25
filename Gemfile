@@ -58,4 +58,5 @@ group :development, :test do
 end
 
 
-gem 'holder_rails'
+gem 'holder_rails' 
+gem 'acts_as_list', git: 'git://github.com/swanandp/acts_as_list.git'

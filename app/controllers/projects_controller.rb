@@ -66,10 +66,12 @@ class ProjectsController < ApplicationController
 		end
 	end
 	def sort
+		puts "test"
 		@projects = params[:project]
 		@projects.each_with_index do |id, index|
 			project = Project.find_by(id:id)
 			project.position = index
+
 			project.save
 		end
 		render nothing: true

@@ -11,3 +11,15 @@ jQuery ->
 
 $(document).bind 'page:change', ->
   Holder.run()
+
+jQuery ->
+	$('#projects').sortable
+		handle: '.handle'
+		opacity: 0.4	
+		update: ->
+			$.post($(this).data('update-url'), $(this).sortable('serialize'))
+jQuery ->
+  $('#sub_images').sortable
+    handle: '.handle'
+    update: ->
+      $.post($(this).data('update-url'), $(this).sortable('serialize'))

@@ -5,8 +5,11 @@
 	<% if @project.sub_images.empty? %>
 		<%= holder_tag '100%x400','Please add first image', 'social' %>
 	<% else %>
-		<div id="galleria" class="sub_images">
-			<%= render @project.sub_images %>
+		<div class="sub_images_wrap">
+			<ul id="sub_images" data-update-url="" >
+				<%= render @project.sub_images %>
+			</ul>
+				
 		</div>
 	<% end %>
 	</div>
@@ -15,7 +18,7 @@
 	<%= form_for([@project, @project.sub_images.build])  do |f| %>
 		<p>
 			<%= f.label :image %>
-			<%= f.file_field :image %>		
+			<%= f.file_field :image, class: "btn btn-primary" %>		
 		</p>
 		<%= f.submit %>
 	<% end %>
@@ -65,5 +68,3 @@
 | <%= link_to 'Edit', edit_project_path(@project) %>
 | <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure ? ' } %>
 </div>
-
-<%= javascript_include_tag "galleria" %>

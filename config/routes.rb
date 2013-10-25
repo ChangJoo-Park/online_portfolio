@@ -1,7 +1,9 @@
 Portfolio::Application.routes.draw do
   resources :projects do
     post :sort, on: :collection
-    resources :sub_images
+    resources :sub_images do
+      post :sort, on: :collection
+    end
   end
 
   get "welcome/index"

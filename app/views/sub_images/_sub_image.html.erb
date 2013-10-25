@@ -1,4 +1,6 @@
-<% domid = "sub_#{sub_image.id}" %>
-<%= image_tag sub_image.image.url(:large) %>
-<%=  sub_image.caption %>
+<%= content_tag_for :li, sub_image do %>
+<span class="handle">[drag]</span>
+<%= image_tag sub_image.image.url(:thumb), width:200, height:150 %>
+<%= sub_image.caption %>
 <%= link_to "", [sub_image.project, sub_image], method: :delete, data: { confirm:'Are you sure? '}, class: "glyphicon glyphicon-trash" %>
+<% end %>
