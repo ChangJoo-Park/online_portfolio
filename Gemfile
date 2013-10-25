@@ -50,13 +50,14 @@ gem 'thin'
 gem 'debugger', group: [:development, :test]
 gem 'better_errors'
 # Use Paperclip for upload multiple images 
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+#gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+# Use Carrierwave
+gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
+gem 'carrierwave'
 gem "acts_as_list", git: "git://github.com/swanandp/acts_as_list.git"
 gem 'galleria-rails', github: 'albandiguer/galleria-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
-
-
 gem 'holder_rails' 
-gem 'acts_as_list', git: 'git://github.com/swanandp/acts_as_list.git'
+gem 'jquery-fileupload-rails'

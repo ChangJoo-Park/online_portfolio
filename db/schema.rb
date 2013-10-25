@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004110415) do
+ActiveRecord::Schema.define(version: 20131025125013) do
 
   create_table "projects", force: true do |t|
     t.string   "title"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20131004110415) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "image"
   end
 
   add_index "sub_images", ["project_id"], name: "index_sub_images_on_project_id"

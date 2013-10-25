@@ -1,6 +1,7 @@
 <%= content_tag_for :li, sub_image do %>
-<span class="handle">[drag]</span>
-<%= image_tag sub_image.image.url(:thumb), width:200, height:150 %>
+<span class="handle">
+<%= image_tag sub_image.image_url(:thumb).to_s %>
 <%= sub_image.caption %>
 <%= link_to "", [sub_image.project, sub_image], method: :delete, data: { confirm:'Are you sure? '}, class: "glyphicon glyphicon-trash" %>
+</span>
 <% end %>

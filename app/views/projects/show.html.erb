@@ -14,11 +14,14 @@
 	<% end %>
 	</div>
 	<hr>
+	<div class="clear"></div>
 	<div class="add_sub_images">
-	<%= form_for([@project, @project.sub_images.build])  do |f| %>
+	<%= form_for([@project, @project.sub_images.build], multipart: true)  do |f| %>
 		<p>
-			<%= f.label :image %>
-			<%= f.file_field :image, class: "btn btn-primary" %>		
+			<%= f.file_field :image, multiple: true, name: "sub_image[image]",class: "btn btn-primary" %>		
+			<% #TODO Upload using URL %>
+			<%= f.label :remote_image_url, "or Image URL" %><br/>
+			<%= f.text_field :remote_image_url %>
 		</p>
 		<%= f.submit %>
 	<% end %>

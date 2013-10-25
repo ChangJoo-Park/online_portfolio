@@ -4,7 +4,7 @@
 		<span class='handle'>[drag]</span>
 		<%= project.title %>
 		<%= link_to '', project_path(project), method: :delete, remote: true, class:'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
-		<%= link_to (image_tag project.thumbnail.url(:small) ),project %>
+		<%= link_to (image_tag project.url ),project %>
 		<% link_to 'Edit', edit_project_path(project) %>
 	<% end %>
 <% end %>

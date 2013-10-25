@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery.ui.all
+//= require jquery-fileupload/basic
 //= require jquery_ujs
 //= galleria-1.2.9
 //= galleria.classic
