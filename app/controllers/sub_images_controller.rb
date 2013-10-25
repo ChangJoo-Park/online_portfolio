@@ -33,9 +33,13 @@ class SubImagesController < ApplicationController
 	end
 
 	def sort
-		@project = Project.find(params[:id])
-		params[@project,:sub_images].each_with_index do |id, index|
+		@project = Project.find_by(id: params[:project_id])
+		@images = @project.sub_images.find(params[:sub_image])
 
+		@images.each_with_index do |id,index|
+			image = @project.sub_images.find_by(id: id)
+			image.position = index
+			image.save
 		end
 		render nothing: true
 	end	

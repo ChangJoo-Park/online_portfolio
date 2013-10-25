@@ -23,7 +23,6 @@ jQuery ->
     handle: '.handle'
     update: ->
       $.post($(this).data('update-url'), $(this).sortable('serialize'))
-
 jQuery ->
   $('#new_painting').fileupload
     dataType: "script"

@@ -6,8 +6,8 @@
 		<%= holder_tag '100%x400','Please add first image', 'social' %>
 	<% else %>
 		<div class="sub_images_wrap">
-			<ul id="sub_images" data-update-url="" >
-				<%= render @project.sub_images %>
+			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project) %>">
+				<%= render @project.sub_images, collection: @project.sub_images.order(:position) %>
 			</ul>
 				
 		</div>
