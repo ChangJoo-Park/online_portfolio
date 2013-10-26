@@ -8,4 +8,5 @@ class SubImage < ActiveRecord::Base
   def default_caption
   	self.caption ||= File.basename(image.filename,'.*').titleize if image
   end
+
 end
