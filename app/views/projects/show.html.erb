@@ -6,10 +6,10 @@
 		<%= holder_tag '100%x400','Please add first image', 'social' %>
 	<% else %>
 		<div class="sub_images_wrap">
-			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project) %>">
-				<%= render @project.sub_images, collection: @project.sub_images.order(:position) %>
+			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project.id) %>">
+				<%= render @project.sub_images.order(:position) %>
 			</ul>
-				
+
 		</div>
 	<% end %>
 	</div>
@@ -18,7 +18,7 @@
 	<div class="add_sub_images">
 	<%= form_for([@project, @project.sub_images.build], multipart: true)  do |f| %>
 		<p>
-			<%= f.file_field :image, multiple: true, name: "sub_image[image]",class: "btn btn-primary" %>		
+			<%= f.file_field :image, multiple: true, name: "sub_image[image]",class: "btn btn-primary" %>
 			<% #TODO Upload using URL %>
 			<%= f.label :remote_image_url, "or Image URL" %><br/>
 			<%= f.text_field :remote_image_url %>

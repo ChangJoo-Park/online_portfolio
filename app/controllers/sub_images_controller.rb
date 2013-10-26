@@ -10,8 +10,8 @@ class SubImagesController < ApplicationController
 		@image = @project.sub_images.find(params[:id])
 		respond_to do |format|
 			if @image.destroy
-				format.html { redirect_to @project }	
-				format.js 
+				format.html { redirect_to @project }
+				format.js
 			else
 				redirect_to @project
 			end
@@ -33,16 +33,19 @@ class SubImagesController < ApplicationController
 	end
 
 	def sort
+		puts "aatest"
 		@project = Project.find_by(id: params[:project_id])
 		@images = @project.sub_images.find(params[:sub_image])
 
-		@images.each_with_index do |id,index|
-			image = @project.sub_images.find_by(id: id)
+		params[:sub_image].each_with_index do |sub, index |
+			image = @project.sub_images.find_by(id: sub)
 			image.position = index
 			image.save
+
+			puts "image's id : #{image.id}, image's position : #{image.position}"
 		end
 		render nothing: true
-	end	
+	end
 
 	private
 		def image_params
