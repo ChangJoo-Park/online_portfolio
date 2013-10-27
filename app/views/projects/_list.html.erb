@@ -1,15 +1,17 @@
 <ul id="projects" data-update-url="<%= sort_projects_url %>">
 <% @projects.each do |project| %>
 	<%= content_tag_for :li, project do %>
-    <% if project.sub_images.empty? %>
-      <%= link_to (holder_tag '200x150','Nothing', 'social'),project,class: 'handle' %>
-    <% else %>
-      <%= link_to (image_tag project.sub_images.order("position ASC").first.image_url(:thumb)),project,class: 'handle' %>
-    <% end  %>
-
-    <%= project.title %>
-		<%= link_to '', project_path(project), method: :delete, remote: true, class:'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
-		<% link_to 'Edit', edit_project_path(project) %>
+    <div>
+      <% if project.sub_images.empty? %>
+        <%= link_to (holder_tag '240x140','Nothing', 'social'),project,class: 'handle' %>
+      <% else %>
+        <%= link_to (image_tag project.sub_images.order("position ASC").first.image_url(:thumb)),project,class: 'handle' %>
+      <% end  %>
+      <br/>
+      <%= link_to project.title, project, class: 'text-center'%>
+      <%= link_to '', project_path(project), method: :delete, remote: true, class: 'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
+  		<% link_to 'Edit', edit_project_path(project) %>
+    </div>
 	<% end %>
 <% end %>
 </ul>

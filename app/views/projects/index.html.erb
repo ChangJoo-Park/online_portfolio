@@ -2,10 +2,10 @@
 <h1>Listing Projects <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary", id: 'btn_new_project' %></span></h1>
 <%= render "modal_new" %>
 <hr>
-	<div class="projects">
+	<div class="projects row">
 		<%= render 'list' %>
 	</div>
 </div>
-<%= debug @project %>
+<% debug @project %>
 
 <%= javascript_include_tag "sort_project" %>

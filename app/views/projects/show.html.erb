@@ -1,5 +1,5 @@
 <div class="container">
-	<h1 class="title"><%= best_in_place @project, :title, type: :input %></h1>
+	<h1 class="title"><%= @project.title %></h1>
 	<hr>
 	<div class="image col-md-12 col-lg-12">
 	<% if @project.sub_images.empty? %>
@@ -28,6 +28,10 @@
 	</div>
 	<% #TODO Apply css %>
 	<div class="details">
+		<p>
+			<strong>Title</strong>
+			<%= best_in_place @project, :title, type: :input %>
+		</p>
 		<p>
 			<strong>Description</strong><br/>
 			<%= best_in_place @project, :description, type: :textarea, nil: 'Insert Some text' %>

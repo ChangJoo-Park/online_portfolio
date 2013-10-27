@@ -9,3 +9,30 @@
     cursor: move;
   }
 }
+
+#projects{
+  list-style-type: none;
+
+  li.project{
+    position: relative;
+    margin: 10px;
+    float: left;
+    background: #eee;
+    border: solid 5px #eee;
+    border-radius: 5px;
+    div{
+      display: block;
+      img{
+        margin-bottom: 10px;
+        width: 250px;
+        height: 140px;
+      }
+      img:hover{
+        border: 5px solid black;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.project-placeholder{ width: 254px; height: 170px;}
