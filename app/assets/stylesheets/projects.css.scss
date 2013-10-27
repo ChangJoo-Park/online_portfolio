@@ -13,6 +13,9 @@
 #projects{
   list-style-type: none;
 
+  .ui-selected{
+    background: red;
+  }
   li.project{
     position: relative;
     margin: 10px;
@@ -20,6 +23,7 @@
     background: #eee;
     border: solid 5px #eee;
     border-radius: 5px;
+    text-align: center;
     div{
       display: block;
       img{
@@ -31,8 +35,34 @@
         border: 5px solid black;
         border-radius: 5px;
       }
+      a{
+        color: black;
+        text-decoration: none;
+      }
+      a:hover{
+        font-weight: bold;
+      }
     }
   }
 }
 
-.project-placeholder{ width: 254px; height: 170px;}
+.project-placeholder{
+  border: 3px dashed #aaa;
+  height: 180px;
+  width: 254px;
+  margin: 10px;
+  background: #ccc;
+  float: left;
+}
+.trashcan{
+  width: 300px;
+  height: 200px;
+  background: red;
+  display: inline-block;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.trashcan:hover{
+}
