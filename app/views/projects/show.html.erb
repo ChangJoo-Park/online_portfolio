@@ -54,7 +54,11 @@
 		<p>
 			<% #TODO Change Layout image.. after layouts fixed make thumbnails %>
 			<strong>Layouts</strong><br/>
-			<%= best_in_place @project, :layouts, type: :select, collection: [[1,"Layout 1"], [2, "Layout 2"]], nil:'Select Default Layout' %>
+			<label><%= holder_tag '100x100','Layout 1' %><%= radio_button_tag @project.layouts,'layout1' %></label>
+			<label><%= holder_tag '100x100','Layout 2' %><%= radio_button_tag @project.layouts,'layout2' %></label>
+			<label><%= holder_tag '100x100','Layout 3' %><%= radio_button_tag @project.layouts,'layout3' %></label>
+			<label><%= holder_tag '100x100','Layout 4' %><%= radio_button_tag @project.layouts,'layout4' %></label>
+			<% best_in_place @project, :layouts, type: :select, collection: [[1,"Layout 1"], [2, "Layout 2"]], nil:'Select Default Layout' %>
 		</p>
 	</div>
 

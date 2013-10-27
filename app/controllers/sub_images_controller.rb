@@ -16,21 +16,17 @@ class SubImagesController < ApplicationController
 				redirect_to @project
 			end
 		end
-	def update
-		@project = Project.find(params[:id])
-		@image = @project.sub_images.find(params[:id])
-		respond_to do |format|
-			if @image.update_attributes(project_params)
-				format.html { redirect_to @image, notice:'Sub Image was successfully updated.' }
-				format.json { head :ok }
-			else
-				format.html { render action: 'edit' }
-				format.json { render json: @project.errors.full_messages, status: :unprocessable_entity }
-			end
-		end
+	end
 
+
+	def update
+		@project = Project.find(params[:project_id])
+		@image = @project.sub_images.find(params[:id])
+		@image.caption = params[:sub_image][:caption]
+		@image.save
+		render nothing: true
 	end
-	end
+
 
 	def sort
 		puts "aatest"
