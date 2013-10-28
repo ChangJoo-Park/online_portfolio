@@ -27,6 +27,7 @@
 	<% end %>
 	</div>
 	<% #TODO Apply css %>
+	<hr>
 	<div class="details">
 		<p>
 			<strong>Title</strong>
@@ -80,3 +81,4 @@
 | <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure ? ' } %>
 </div>
 <%= javascript_include_tag "sort_sub_images" %>
+<%= debug @project %>
