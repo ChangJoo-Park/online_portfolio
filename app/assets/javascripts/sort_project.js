@@ -2,15 +2,16 @@ $(function() {
 
    $('.droppable').droppable({
     accept: ".sortable li",
-    tolerance: 'intersect',
-
+    tolerance: 'pointer',
     over: function(event,ui){
-      $('.project-placeholder').html("<span>Remove This</span>").css("background","red");
+      $('.project-placeholder').html("<span>Remove This</span>").css("background","#eee");
+      //$('.trashcan').css("background","red");
       ui.draggable.css("opacity","0.9");
     },
 
     out: function(event,ui){
       $('.project-placeholder').html("").css("background","#eee");
+      //$('.trashcan').css("background","#eee");
     },
 
     drop: function(event,ui){
@@ -34,12 +35,10 @@ $(function() {
     revert: true,
     connectWith: '.droppable',
     start: function(e, ui){
-      //$(ui.placeholder).hide(500);
-      //$(".trashcan").show(500);
+      $(".trashcan").fadeIn(500);
     },
     stop: function(e, ui){
-      //$(ui.placeholder).show(500);
-      //(".trashcan").hide(500);
+      $(".trashcan").fadeOut(500);
     },
     update: function() {
       return $.post($(this).data('update-url'), $(this).sortable('serialize'));

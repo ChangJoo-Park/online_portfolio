@@ -74,11 +74,11 @@ class ProjectsController < ApplicationController
 			project.save
 		end
 		render nothing: true
-	end	
+	end
 
 	private
 		def project_params
 			params.require(:project).permit(:title, :thumbnail_url, :description, :url, :work_for, :types, :layouts, :visibility, :thumbnail, :position)
 		end
-	
+
 end
