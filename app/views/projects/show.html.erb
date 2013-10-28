@@ -54,19 +54,11 @@
 			<%= best_in_place @project, :types, type: :input, nil: 'Insert Some text' %>
 		</p>
 	</div>
-
 	<div class="layouts">
-		<p>
-			<% #TODO Change Layout image.. after layouts fixed make thumbnails %>
-			<strong>Layouts</strong><br/>
-			<label><%= holder_tag '100x100','Layout 1' %><%= radio_button_tag @project.layouts,'layout1' %></label>
-			<label><%= holder_tag '100x100','Layout 2' %><%= radio_button_tag @project.layouts,'layout2' %></label>
-			<label><%= holder_tag '100x100','Layout 3' %><%= radio_button_tag @project.layouts,'layout3' %></label>
-			<label><%= holder_tag '100x100','Layout 4' %><%= radio_button_tag @project.layouts,'layout4' %></label>
-			<% best_in_place @project, :layouts, type: :select, collection: [[1,"Layout 1"], [2, "Layout 2"]], nil:'Select Default Layout' %>
-		</p>
+		<strong>Layouts</strong><br/>
+		<%= image_tag "layout1.png" %>
+  	<%= best_in_place @project, :layouts, type: :select, collection: [["layout1", "Layout 1"], ["layout2", "Layout 2"], ["layout3", "Layout 3"]] %>
 	</div>
-
 	<div class="visibility">
 	<p>
 		<% #TODO Change visibility image %>
@@ -81,4 +73,5 @@
 | <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure ? ' } %>
 </div>
 <%= javascript_include_tag "sort_sub_images" %>
+<%= javascript_include_tag "select_layout" %>
 <%= debug @project %>
