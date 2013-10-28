@@ -55,9 +55,10 @@
 		</p>
 	</div>
 	<div class="layouts">
-		<strong>Layouts</strong><br/>
-		<%= image_tag "layout1.png" %>
-  	<%= best_in_place @project, :layouts, type: :select, collection: [["layout1", "Layout 1"], ["layout2", "Layout 2"], ["layout3", "Layout 3"]] %>
+		<strong>Layouts</strong><%= best_in_place @project, :layouts, type: :select, collection: [["layout1", "Layout 1"], ["layout2", "Layout 2"], ["layout3", "Layout 3"]] %><br/>
+		<%= image_tag "layout1.png", id: "layout1", class: "layout" %>
+		<%= image_tag "layout2.png", id: "layout2", class: "layout" %>
+		<%= image_tag "layout3.png", id: "layout3", class: "layout" %>
 	</div>
 	<div class="visibility">
 	<p>

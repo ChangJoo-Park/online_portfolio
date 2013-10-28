@@ -9,6 +9,8 @@ $(function(){
           return val[0];
         }
       });
-    $('.layouts img').attr('src',"/assets/"+img_name+".png");
+    $('.layouts img').removeClass('selected_layout');
+    $('.layouts img#'+img_name).addClass('selected_layout');
+    //$('.layouts img').attr('src',"/assets/"+img_name+".png");
   });
 });
