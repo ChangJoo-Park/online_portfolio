@@ -1,3 +1,11 @@
+$(document).ready(function($) {
+  var selected = $('.layouts span').data('value');
+  var img_name = $('.layouts img').each(function(index){
+    if($(this).attr('id') == selected){
+      $(this).addClass('selected_layout');
+    }
+  });
+});
 $(function(){
   $('.layouts span').change(function(){
     var selected = $(this).text();
@@ -11,6 +19,12 @@ $(function(){
       });
     $('.layouts img').removeClass('selected_layout');
     $('.layouts img#'+img_name).addClass('selected_layout');
-    //$('.layouts img').attr('src',"/assets/"+img_name+".png");
+  });
+});
+
+$(function(){
+  $('.layouts img').click(function(){
+    console.log($(this));
+
   });
 });
