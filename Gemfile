@@ -15,7 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# Use Bootstrap 3 
+# Use Bootstrap 3
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -49,7 +49,7 @@ gem 'thin'
 # Use debugger
 gem 'debugger', group: [:development, :test]
 gem 'better_errors'
-# Use Paperclip for upload multiple images 
+# Use Paperclip for upload multiple images
 #gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use Carrierwave
 gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
@@ -59,5 +59,6 @@ gem 'galleria-rails', github: 'albandiguer/galleria-rails'
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
-gem 'holder_rails' 
+gem 'holder_rails'
 gem 'jquery-fileupload-rails'
+gem 'devise'

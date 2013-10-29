@@ -1,4 +1,5 @@
 Portfolio::Application.routes.draw do
+  devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
   resources :projects do
     post :sort, on: :collection
     resources :sub_images do
@@ -11,7 +12,7 @@ Portfolio::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'projects#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -47,7 +48,7 @@ Portfolio::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
