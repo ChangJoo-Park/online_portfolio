@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+# mainpage navigation
+  main_banner_title: "Online Portfolio"
+  main_about: "About"
+  main_work: "Work"
+  main_contact: "Contact"
+# mainpage first body
+  main_welcome: "Welcome to Online Portfolio service."
