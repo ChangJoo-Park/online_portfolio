@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//  * Change jquery.ui.all to specific libraries
 //= require jquery.ui.all
 //= require jquery-fileupload/basic
 //= require jquery_ujs

@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
 	acts_as_list
 	validates :title, presence: true
   #FIXME will be fixed best_in_place 'nil'
+  before_create :owner
   after_initialize :default_values
 
 
@@ -15,5 +16,9 @@ class Project < ActiveRecord::Base
       self.work_for ||= 'Input Something..'
       self.types ||= 'Input Something..'
       self.layouts ||= 'layout1'
+    end
+
+    def owner
+      self.user_id ||= current_user.id
     end
 end

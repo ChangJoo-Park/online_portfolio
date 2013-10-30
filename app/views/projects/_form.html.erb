@@ -44,7 +44,7 @@
 		<%= f.label :layouts %>
 		<%= f.radio_button :layouts, 'layout1',checked: true %><%= f.label :layouts_layout1, "Layout 1" %>
 		<%= f.radio_button :layouts, 'layout2',checked: false %><%= f.label :layouts_layout2, "Layout 2" %>
-		
+
 	</p>
 	<p>
 		<%= f.label :visibility%>
@@ -54,6 +54,11 @@
 	<p>
 		<%= f.label :position%>
 		<%= f.text_field :position %>
+	</p>
+
+	<p>
+		<%= f.label :user_id%>
+		<%= f.text_field :user_id %>
 	</p>
 
 	<%= f.submit %>

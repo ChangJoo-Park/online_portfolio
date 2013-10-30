@@ -38,7 +38,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # Use unicorn as the app server
 gem 'thin'
@@ -47,8 +47,11 @@ gem 'thin'
 # gem 'capistrano', group: :development
 
 # Use debugger
-gem 'debugger', group: [:development, :test]
-gem 'better_errors'
+group :development, :test do
+  gem 'debugger'
+  gem 'better_errors'
+  gem "binding_of_caller"
+end
 # Use Paperclip for upload multiple images
 #gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use Carrierwave

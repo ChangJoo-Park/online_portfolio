@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :projects, dependent: :destroy
   #include Authority::UserAbilities
   #  has_many :projects, foreign_key: :id
   # Include default devise modules. Others available are:

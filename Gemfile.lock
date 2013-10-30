@@ -34,6 +34,12 @@ GIT
   specs:
     rmagick (2.13.2)
 
+GIT
+  remote: https://github.com/codahale/bcrypt-ruby.git
+  revision: df09e4c73f2f3d9a134b2abf536ca5f159f33075
+  specs:
+    bcrypt-ruby (3.1.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,10 +69,11 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.14)
-    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.1.4)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
@@ -82,6 +89,7 @@ GEM
     coffee-script-source (1.6.3)
     columnize (0.3.6)
     daemons (1.1.9)
+    debug_inspector (0.0.2)
     debugger (1.6.2)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -204,8 +212,10 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list!
   anjlab-bootstrap-rails!
+  bcrypt-ruby!
   best_in_place!
   better_errors
+  binding_of_caller
   carrierwave
   coffee-rails (~> 4.0.0)
   debugger
