@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  belongs_to :user
 	has_many :sub_images, dependent: :destroy
 	acts_as_list
 	validates :title, presence: true
