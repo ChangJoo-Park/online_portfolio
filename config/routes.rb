@@ -1,4 +1,6 @@
 Portfolio::Application.routes.draw do
+  resources :contacts
+
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
   resources :projects do
     post :sort, on: :collection
@@ -9,7 +11,7 @@ Portfolio::Application.routes.draw do
 
   get "welcome/index"
   get "/about", to: 'welcome#about'
-
+get "/contact", to: 'contacts#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

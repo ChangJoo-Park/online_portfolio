@@ -16,21 +16,12 @@
 </div>
 
 <article class="wordWrapperTop">
-  <div class="article container rows contact">
-    <h2>Do you have any idea?</h2>
-    <h1 class="h1">Contacts Our team</h1>
-    <div class="stuff col-md-8 col-lg-8">
-      <%= form_for :contact_form do |f| %>
-        <%= f.label 'Name'%><br/>
-        <p><%= f.text_field 'name' %></p>
-        <%= f.label 'Email' %><br/>
-        <p><%= f.email_field 'email' %></p>
-        <%= f.label 'Message' %><br/>
-        <p><%= f.text_area 'message' %></p>
-        <%= f.submit %>
-      <% end %>
+  <div class="article container row contact">
+    <h1 class="h1">Do you have any idea?</h1>
+    <div class="stuff col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3">
+      <%= render 'form' %>
     </div>
-    <div class="stuff col-md-4 col-lg-4">
+    <div class="stuff col-md-3 col-lg-3">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque adipiscing interdum tempus. Ut egestas felis velit, a suscipit metus convallis a. Cras risus mauris, imperdiet id nisi vitae, malesuada rutrum lorem. Ut quis porta elit. Aenean nec ante leo. Etiam et felis turpis. Vestibulum est tellus, venenatis et molestie non, facilisis ut dolor. Cras a lorem quis ipsum facilisis molestie ut vitae orci. Morbi lacus augue, aliquet sit amet justo sed, luctus auctor metus. Aliquam pulvinar at neque id fermentum. Phasellus euismod, tortor vel blandit aliquet, est nisl vestibulum lorem, in dictum ligula turpis quis justo. Vestibulum sit amet aliquam purus, non imperdiet tellus. Proin sit amet consectetur orci, rhoncus tristique purus. Cras feugiat, est nec viverra gravida, dui massa dapibus lectus, ut porttitor neque nulla mattis elit.
     </div>
     <div class="clear"></div>
@@ -38,4 +29,3 @@
 </article>
 
 <%= render 'shared_welcome/footer' %>
-
