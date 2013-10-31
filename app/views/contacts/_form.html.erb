@@ -1,4 +1,4 @@
-<%= form_for(@contact) do |f| %>
+<%= form_for(@contact, remote: true) do |f| %>
   <% if @contact.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
@@ -16,15 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :email, "E-Mail" %><br>
+    <%= f.label :email, "E-Mail :" %><br>
     <%= f.email_field :email %>
   </div>
   <div class="field">
-    <%= f.label :message, "Message" %><br>
+    <%= f.label :message, "Message :" %><br>
     <%= f.text_area :message %>
   </div>
   <br>
   <div class="actions">
-    <%= f.submit "Contact", class: 'btn btn-default btn-lg pull-right' %>
+    <%= f.submit "Submit", class: 'btn btn-default btn-lg pull-right' %>
   </div>
 <% end %>

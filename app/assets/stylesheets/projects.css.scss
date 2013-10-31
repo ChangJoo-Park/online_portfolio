@@ -1,6 +1,9 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background: white;
+}
 #sub_images{
   list-style: none;
   .handle{
@@ -78,4 +81,7 @@
 
 .selected_layout{
   border: 5px solid black;
+}
+.project_index{
+
 }

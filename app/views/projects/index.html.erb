@@ -1,19 +1,21 @@
-<% if user_signed_in? %>
-<h1>Listing Projects
-  <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary", id: 'btn_new_project' %></span>
+<div class="container project_index">
+  <% if user_signed_in? %>
+  <h1>Listing Projects
+    <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary", id: 'btn_new_project' %></span>
 
-</h1>
+  </h1>
 
-<%= render "modal_new" %>
+  <%= render "modal_new" %>
 
-<hr>
-	<div class="projects row">
-		<%= render 'list' %>
-	</div>
-<div class="trashcan droppable none"></div>
-<% end %>
-<%= @user = current_user %>
-<%= debug @user %>
-<%= debug @user.projects if current_user %>
-<%= javascript_include_tag "sort_project" %>
-<%= javascript_include_tag "trashcan_project" %>
+  <hr>
+  	<div class="projects row">
+  		<%= render 'list' %>
+  	</div>
+  <div class="trashcan droppable none"></div>
+  <% end %>
+  <%= @user = current_user %>
+  <%= debug @user %>
+  <%= debug @user.projects if current_user %>
+  <%= javascript_include_tag "sort_project" %>
+  <%= javascript_include_tag "trashcan_project" %>
+</div>
