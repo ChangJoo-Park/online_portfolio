@@ -4,4 +4,13 @@ class WelcomeController < ApplicationController
   def index
     render layout: 'welcome'
   end
+
+  def about
+    render layout: 'welcome'
+  end
+
+  def contact
+    render layout: 'welcome'
+  end
+
 end

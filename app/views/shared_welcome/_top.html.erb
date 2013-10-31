@@ -2,9 +2,8 @@
   <div class="nav container">
   <a href="<%= root_path %>" class="logo"><%= t 'main_banner_title' %></a>
   <ul class="navigation">
-    <li><%= link_to t('main_about') %></li>
-    <li><%= link_to t('main_work') %></li>
-    <li><%= link_to t('main_contact') %></li>
+    <li><%= link_to t('main_about'), about_path %></li>
+    <li><%= link_to t('main_contact'), new_contact_path %></li>
   </ul>
   </div>
 </nav>
