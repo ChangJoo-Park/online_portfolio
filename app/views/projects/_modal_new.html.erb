@@ -8,7 +8,7 @@
       </div>
       <div class="modal-body">
       <% @user = current_user %>
-      <%= current_id = @user.id %>
+      <% current_id = @user.id %>
 				<%= form_for @user.projects.build do |f| %>
 					<%= f.label :title %>
 					<%= f.text_field :title %>

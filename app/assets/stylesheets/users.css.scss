@@ -1,3 +1,57 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user{
+  font-family: "Lato", sans-serif !important;
+  .name{
+
+  }
+  .email{
+
+  }
+}
+
+
+.projects_items{
+  font-family: "Lato", sans-serif !important;
+  .item{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    // Image
+    .img{
+      text-align: center;
+    }
+    // Details
+    .detail{
+
+      // Created Time
+      .created_time{
+        border-bottom: 1px solid black;
+      }
+      // Title
+      .title{
+        text-align: center;
+      }
+      // Description
+      .description{
+
+      }
+      // ETC
+      .etc{
+        span{  }
+      }
+      .clear{
+        clear: both;
+      }
+    }
+  }
+}
+.sub{
+  display: none;
+  height: 400px;
+  .sub_list{
+    .description{
+      text-align: center;
+    }
+  }
+}

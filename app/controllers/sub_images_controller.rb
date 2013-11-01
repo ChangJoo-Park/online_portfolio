@@ -29,17 +29,17 @@ class SubImagesController < ApplicationController
 
 
 	def sort
+		logger.info "start sort"
 		@project = Project.find_by(id: params[:project_id])
 		@images = @project.sub_images.find(params[:sub_image])
-
+		logger.info "test"
 		params[:sub_image].each_with_index do |sub, index |
 			image = @project.sub_images.find_by(id: sub)
 			image.position = index
 			image.save
-			if image.position == 1
-				@project.thumbnail_url = image.image_url(:thumb)
+			if image.position.equal?(0)
+				@project.thumbnail_url = image.image_url
 			end
-			puts "image's id : #{image.id}, image's position : #{image.position}"
 		end
 		render nothing: true
 	end
