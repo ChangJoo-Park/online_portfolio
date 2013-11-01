@@ -65,3 +65,4 @@ end
 gem 'holder_rails'
 gem 'jquery-fileupload-rails'
 gem 'devise'
+gem 'friendly_id'

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 	respond_to :html, :json
 	def index
 		@projects = Project.order("position").all
+		@project = Project.new
 		respond_to do |format|
 			format.html { }
 			format.json { render json: @projects }
@@ -40,6 +41,17 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
+    @project = Project.new(project_params)
+    @user = current_user
+    @project.user_id = @user.id
+     respond_to do |format|
+       if @project.save
+         format.html { redirect_to @project }
+         format.js
+       else
+         render 'new'
+       end
+     end
 	end
 
 	def destroy

@@ -13,9 +13,10 @@
   	</div>
   <div class="trashcan droppable none"></div>
   <% end %>
-  <%= @user = current_user %>
-  <%= debug @user %>
-  <%= debug @user.projects if current_user %>
+
+  <%= "abcdef" %>
+  <%= debug current_user %>
+  <%= debug @user.projects if current_user.id %>
   <%= javascript_include_tag "sort_project" %>
   <%= javascript_include_tag "trashcan_project" %>
 </div>

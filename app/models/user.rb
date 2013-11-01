@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :history]
   has_many :projects, dependent: :destroy
   #include Authority::UserAbilities
   #  has_many :projects, foreign_key: :id
@@ -21,5 +23,7 @@ class User < ActiveRecord::Base
       end
   end
 
-
+  def should_generate_new_friendly_id?
+    new_record?
+  end
 end

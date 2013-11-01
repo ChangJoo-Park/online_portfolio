@@ -107,6 +107,8 @@ GEM
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (2.0.2)
+    friendly_id (5.0.1)
+      activerecord (~> 4.0.0)
     hike (1.2.3)
     holder_rails (2.2.0)
       railties (>= 3.1.0)
@@ -220,6 +222,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   debugger
   devise
+  friendly_id
   galleria-rails!
   holder_rails
   jbuilder (~> 1.2)

@@ -1,4 +1,5 @@
 Portfolio::Application.routes.draw do
+  get "users/show"
   resources :contacts
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
@@ -13,7 +14,7 @@ Portfolio::Application.routes.draw do
   get "welcome/index"
   get "/about", to: 'welcome#about'
   get "/contact", to: 'contacts#new'
-
+  match 'users/:id' => 'users#show', via: [:get]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

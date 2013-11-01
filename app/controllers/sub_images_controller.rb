@@ -29,7 +29,6 @@ class SubImagesController < ApplicationController
 
 
 	def sort
-		puts "aatest"
 		@project = Project.find_by(id: params[:project_id])
 		@images = @project.sub_images.find(params[:sub_image])
 
@@ -37,7 +36,9 @@ class SubImagesController < ApplicationController
 			image = @project.sub_images.find_by(id: sub)
 			image.position = index
 			image.save
-
+			if image.position == 1
+				@project.thumbnail_url = image.image_url(:thumb)
+			end
 			puts "image's id : #{image.id}, image's position : #{image.position}"
 		end
 		render nothing: true

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-lg-3">
+    <ul>
+      <li><%= @user.email %></li>
+      <li><%= @user.username %></li>
+    </ul>
+  </div>
+  <div class="col-lg-9">
+    <ul>
+      <% @user.projects.each do |project| %>
+        <li><%= project.title %></li>
+        <li><%= image_tag project.sub_images.first.image_url(:thumb) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%= debug @user %>
+<%= debug @user.projects %>
