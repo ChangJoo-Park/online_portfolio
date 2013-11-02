@@ -54,13 +54,15 @@
 			<%= best_in_place @project, :types, type: :input, nil: 'Insert Some text' %>
 		</p>
 	</div>
+<!--
 	<div class="layouts">
 		<strong>Layouts</strong>
-		<%= best_in_place @project, :layouts, type: :select, collection: [["layout1", "Layout 1"], ["layout2", "Layout 2"], ["layout3", "Layout 3"]] %><br/>
-		<%= image_tag "layout1.png", id: "layout1", class: "layout" %>
-		<%= image_tag "layout2.png", id: "layout2", class: "layout" %>
-		<%= image_tag "layout3.png", id: "layout3", class: "layout" %>
+		<% best_in_place @project, :layouts, type: :select, collection: [["layout1", "Layout 1"], ["layout2", "Layout 2"], ["layout3", "Layout 3"]] %><br/>
+		<% image_tag "layout1.png", id: "layout1", class: "layout" %>
+		<% image_tag "layout2.png", id: "layout2", class: "layout" %>
+		<% image_tag "layout3.png", id: "layout3", class: "layout" %>
 	</div>
+-->
 	<div class="visibility">
 	<p>
 		<% #TODO Change visibility image %>
@@ -75,5 +77,4 @@
 	| <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure ? ' } %>
 	<%= javascript_include_tag "sort_sub_images" %>
 	<%= javascript_include_tag "select_layout" %>
-	<%= debug @project %>
 </div>

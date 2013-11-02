@@ -8,7 +8,7 @@ $ ->
     number = $(this).attr('class').replace(/[^0-9.]/g, "")
     console.log("no_"+number)
     scrollTo("no_"+number)
-    $(".sub_"+number).slideToggle "fast", ->
+    $(".sub_"+number).slideToggle "fast","easeOutCubic", ->
       console.log "worked"
 
 scrollTo = (id) ->

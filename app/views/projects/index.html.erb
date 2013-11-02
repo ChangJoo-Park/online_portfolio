@@ -12,11 +12,8 @@
   		<%= render 'list' %>
   	</div>
   <div class="trashcan droppable none"></div>
-  <% end %>
 
-  <%= "abcdef" %>
-  <%= debug current_user %>
-  <%= debug @user.projects if current_user.id %>
+  <% end %>
   <%= javascript_include_tag "sort_project" %>
   <%= javascript_include_tag "trashcan_project" %>
 </div>
