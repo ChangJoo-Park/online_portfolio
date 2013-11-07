@@ -14,7 +14,7 @@ Portfolio::Application.routes.draw do
   get "welcome/index"
   get "/about", to: 'welcome#about'
   get "/contact", to: 'contacts#new'
-  match 'users/:id' => 'users#show', via: [:get]
+  match '/:id' => 'users#show', via: [:get]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

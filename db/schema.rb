@@ -45,10 +45,6 @@ ActiveRecord::Schema.define(version: 20131101050724) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "thumbnail_url"
-    t.string   "thumbnail_file_name"
-    t.string   "thumbnail_content_type"
-    t.integer  "thumbnail_file_size"
-    t.datetime "thumbnail_updated_at"
     t.integer  "position"
     t.integer  "user_id"
   end
@@ -64,11 +60,6 @@ ActiveRecord::Schema.define(version: 20131101050724) do
     t.datetime "updated_at"
     t.string   "url"
     t.integer  "position"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.string   "image"
   end
 
   add_index "sub_images", ["project_id"], name: "index_sub_images_on_project_id"
@@ -92,6 +83,7 @@ ActiveRecord::Schema.define(version: 20131101050724) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug"
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
