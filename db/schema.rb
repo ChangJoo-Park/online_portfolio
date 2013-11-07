@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101050724) do
+ActiveRecord::Schema.define(version: 20131107165005) do
 
   create_table "contacts", force: true do |t|
     t.string   "name"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20131101050724) do
     t.datetime "updated_at"
     t.string   "url"
     t.integer  "position"
+    t.string   "image"
   end
 
   add_index "sub_images", ["project_id"], name: "index_sub_images_on_project_id"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20131101050724) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "slug"
+    t.string   "layouts"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

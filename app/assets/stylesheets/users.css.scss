@@ -56,3 +56,88 @@
     }
   }
 }
+
+html,body{
+  height:100%;
+}
+.row{
+  margin: 0px;
+}
+.layout2{
+  background: #191919;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+
+  color: white;
+    -webkit-transition: color 500ms linear;
+    -moz-transition: color 500ms linear;
+    -o-transition: color 500ms linear;
+    -ms-transition: color 500ms linear;
+    transition: color 500ms linear;
+
+  .project_item{
+    height: 100%;
+    border-bottom: 1px solid white;
+    margin-bottom: 50px;
+    hr{
+        border-top: 1px solid black;
+      }
+
+    .projectinfo{
+    }
+  }
+  .galleria-container{
+    background: transparent;
+  }
+  .project_item:hover{
+    background-color: #323232;
+    -webkit-transition: background-color 1000ms linear;
+    -moz-transition: background-color 1000ms linear;
+    -o-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+    color: white;
+    -webkit-transition: color 500ms linear;
+    -moz-transition: color 500ms linear;
+    -o-transition: color 500ms linear;
+    -ms-transition: color 500ms linear;
+    transition: color 500ms linear;
+
+    .galleria-container{
+      background-color: #323232;
+      -webkit-transition: background-color 1000ms linear;
+      -moz-transition: background-color 1000ms linear;
+      -o-transition: background-color 1000ms linear;
+      -ms-transition: background-color 1000ms linear;
+      transition: background-color 1000ms linear;
+      color: black;
+      -webkit-transition: color 500ms linear;
+      -moz-transition: color 500ms linear;
+      -o-transition: color 500ms linear;
+      -ms-transition: color 500ms linear;
+      transition: color 500ms linear;
+      .galleria-image-nav-left, .galleria-image-nav-right{
+        filter: invert(1);
+        -webkit-filter: invert(1);
+        -moz-filter: invert(1);
+        -o-filter: invert(1);
+        -ms-filter: invert(1);
+      }
+      .galleria-info-link{
+        color: white;
+      }
+    }
+  }
+  .images{
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    img{
+      display: inline-block;
+      width: 45%;
+    }
+  }
+}

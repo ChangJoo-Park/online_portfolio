@@ -15,3 +15,26 @@ $(document).bind 'page:change', ->
 $ ->
   $('#new_painting').fileupload
     dataType: "script"
+
+
+$ ->
+  $(".lists a").click (event) ->
+    event.preventDefault()
+    console.log $(this).data("value")
+    if $(this).hasClass("active")
+      console.log "has active"
+    else
+      console.log "not active"
+      $(this).parent().find(".active").removeClass "active"
+      $(this).addClass("active").animate({
+
+        });
+      console.log $("#current_layout")
+
+$ ->
+  a = $(".lists a")
+  cl = $('.current_layout').attr("value")
+  $.each a, (index, value) ->
+    if $(this).attr("value") is cl
+      $(this).addClass "active"
+

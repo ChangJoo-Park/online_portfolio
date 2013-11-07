@@ -41,7 +41,8 @@ end
 gem 'bcrypt-ruby', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 
 # Use unicorn as the app server
-gem 'thin'
+gem 'unicorn'
+#gem 'thin'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

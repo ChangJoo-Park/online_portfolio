@@ -1,0 +1,30 @@
+
+<%= render "layout2_script" %>
+<div class="row layout2">
+<!-- User information -->
+  <div class="col-lg-2 col-md-2 col-sm-2" class="userside">
+  <label for="">Name</label> <span><%= @user.username %></span><br/>
+  <label for="">E - Mail</label> <span><%= @user.email %></span><br/>
+  </div>
+<!-- Project information -->
+  <div class="col-lg-9 col-md-9 col-sm-9" class="projectside">
+  <% @projects.each_with_index do |project, index| %>
+    <div id="project<%=index%>" class="project_item">
+      <div class="projectinfo">
+        <h1><%= project.title %></h1>
+        <div><%= project.description %></div>
+      </div>
+      <hr>
+  <!-- Project images -->
+      <div class="galleria images">
+        <% project.sub_images.each do |sub_image| %>
+          <a href="<%= sub_image.image_url(:layout2)%>"><img src="<%= sub_image.image_url(:thumb)%>" data-big="<%= sub_image.image_url(:layout1)%>" data-title="" data-description="<%= sub_image.caption %>"></a>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
+</div>
+
+

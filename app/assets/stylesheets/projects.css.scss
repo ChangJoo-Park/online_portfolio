@@ -21,7 +21,7 @@ body{
   }
   li.project{
     position: relative;
-    margin: 5px;
+    margin: 10px;
     float: left;
     background: #eee;
     border: solid 5px #eee;
@@ -84,4 +84,21 @@ body{
 }
 .project_index{
 
+}
+.topbar{
+  height: 50px;
+  background: black;
+}
+.sidebar{
+  margin-top: 40px;
+  .label{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  .lists{
+    width: 100%;
+    text-align: center;
+  }
 }

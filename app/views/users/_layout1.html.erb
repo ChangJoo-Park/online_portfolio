@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="user col-md-12 col-lg-12">
+      <p class="name"><%= @user.username %>'s Project lists.</p>
+      <p class="email">Please Contact <%= @user.email %></p>
+    </div>
+    <hr>
+    <div class="projects_items col-md-12 col-lg-12">
+      <% @projects.each_with_index do |project, index| %>
+        <div class="item no_<%=index%> row">
+          <div class="img col-md-6 col-lg-6">
+            <%= image_tag project_thumbnail(project) %>
+          </div>
+          <div class="detail col-md-6 col-lg-6">
+            <h1 class="title"><%= project.title %><%= link_to 'Detail', '#', class: "#{index} pull-right btn btn-primary " %></h1>
+            <div class="etc pull-right">
+                <p class="pull-right"><span><%= project.created_at.strftime("%B %d at %I : %M %p") %></span></p><br/>
+                <p class="pull-right"><span class="glyphicon glyphicon-briefcase"></span> <span><%= project.work_for %> </span></p><br/>
+                <p class="pull-right"><span class="glyphicon glyphicon-globe"></span> <span><%= project.url %> </span></p><br/>
+                <p class="pull-right"> <span class="glyphicon glyphicon-glyphicon-edit"></span><span><%= project.types %></span></p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="sub sub_<%= index %> container">
+          <div class="row">
+            <div class="sub_list col-md-12 col-lg-12">
+              <div class="container">
+                <div class="description">
+                  <%= project.description %>
+                </div>
+                <div class="sub_images">
+                  <% project.sub_images.each do |sub_image| %>
+                    <%= image_tag sub_image.image_url(:thumb).to_s %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="footer_layout-1">
+  <hr>
+  <div>Online Portfolio</div>
+</div>
