@@ -86,8 +86,15 @@ body{
 
 }
 .topbar{
-  height: 50px;
   background: black;
+
+  h1{
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 .sidebar{
   margin-top: 40px;
@@ -101,4 +108,7 @@ body{
     width: 100%;
     text-align: center;
   }
+}
+.visibility{
+  margin-bottom:  50px;
 }

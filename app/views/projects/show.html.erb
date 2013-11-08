@@ -1,5 +1,11 @@
+<div class="topbar">
+  <div class="container">
+    <h1>Online Portfolio Management Page </h1>
+
+  </div>
+</div>
 <div class="container">
-	<h1 class="title"><%= @project.title %></h1>
+	<h1 class="title"><%= @project.title %> <%= link_to 'Back', projects_path, class: "btn btn-warning" %></h1>
 	<hr>
 	<div class="image col-md-12 col-lg-12">
 	<% if @project.sub_images.empty? %>
@@ -19,11 +25,8 @@
 	<%= form_for([@project, @project.sub_images.build], multipart: true)  do |f| %>
 		<p>
 			<%= f.file_field :image, multiple: true, name: "sub_image[image]",class: "btn btn-primary" %>
-			<% #TODO Upload using URL %>
-			<%= f.label :remote_image_url, "or Image URL" %><br/>
-			<%= f.text_field :remote_image_url %>
 		</p>
-		<%= f.submit %>
+		<%= f.submit "Upload Image" %>
 	<% end %>
 	</div>
 	<% #TODO Apply css %>
@@ -72,9 +75,7 @@
 	</div>
 
 
-	<%= link_to 'Back', projects_path %>
-	| <%= link_to 'Edit', edit_project_path(@project) %>
-	| <%= link_to 'Delete', project_path(@project), method: :delete, data: { confirm: 'Are you sure ? ' } %>
+
 	<%= javascript_include_tag "sort_sub_images" %>
 	<%= javascript_include_tag "select_layout" %>
 </div>

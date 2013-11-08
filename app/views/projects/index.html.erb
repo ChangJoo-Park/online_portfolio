@@ -1,13 +1,14 @@
 <div class="topbar">
-
+  <div class="container">
+    <h1>Online Portfolio Management Page</h1>
+  </div>
 </div>
 <div class="container project_index">
   <div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-10 col-md-10 col-sm-10">
       <% if user_signed_in? %>
-      <h1>Listing Projects
+      <h1>My Projects
         <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary", id: 'btn_new_project' %></span>
-
       </h1>
 
       <%= render "modal_new" %>
@@ -20,7 +21,7 @@
 
     <% end %>
     </div>
-    <div class="col-lg-2 sidebar">
+    <div class="col-lg-2 col-md-2 col-sm-2 sidebar">
       <%= render 'projects/devise_top' %>
     </div>
   </div>
