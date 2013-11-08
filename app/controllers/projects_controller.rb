@@ -2,14 +2,8 @@ class ProjectsController < ApplicationController
 	respond_to :html, :json
 	def index
 		if user_signed_in?
-			@projects = Project.order("position").all
-			@project = Project.new
-			respond_to do |format|
-				format.html { }
-				format.json { render json: @projects }
-				format.xml  { render xml: @projects }
-				format.js
-			end
+			@projects = current_user.projects.order("position")
+			@project = current_user.projects.new
 		else
 			redirect_to new_user_session_path
 		end
