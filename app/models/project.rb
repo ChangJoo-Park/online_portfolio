@@ -6,14 +6,14 @@ class Project < ActiveRecord::Base
   #FIXME will be fixed best_in_place 'nil'
   after_initialize :default_values
 
-
   private
 
     def default_values
-      self.description ||= 'Input Something..'
-      self.url ||= 'Input Something..'
-      self.work_for ||= 'Input Something..'
-      self.types ||= 'Input Something..'
+      self.description ||= nil
+      self.url ||= nil
+      self.work_for ||= nil
+      self.types ||= nil
       self.layouts ||= 'layout1'
+      self.visibility ||= true
     end
 end

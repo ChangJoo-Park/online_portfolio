@@ -1,5 +1,5 @@
 <%= content_tag_for :li, sub_image do %>
   <%= image_tag sub_image.image_url(:thumb).to_s, class: 'handle' %>
-  <%= best_in_place [sub_image.project, sub_image], :caption %>
+  <%= best_in_place [sub_image.project, sub_image], :caption , ok_button: "Save" %>
   <%= link_to "", [sub_image.project, sub_image], method: :delete, data: { confirm:'Are you sure? '}, class: "glyphicon glyphicon-trash" %>
 <% end %>

@@ -17,7 +17,8 @@ $ ->
     dataType: "script"
 
 
-$ ->
+
+ready = ->
   $(".lists a").click (event) ->
     event.preventDefault()
     console.log $(this).data("value")
@@ -28,24 +29,6 @@ $ ->
       $(this).parent().find(".active").removeClass "active"
       $(this).addClass("active")
       console.log $("#current_layout")
-
-$(document).bind 'page:change', ->
-  console.log('page:change')
-  a = $(".lists a")
-  cl = $('.current_layout').attr("value")
-  $.each a, (index, value) ->
-    if $(this).attr("value") is cl
-      $(this).addClass "active"
-
-$(document).bind 'page:show', ->
-  console.log('page:show')
-  a = $(".lists a")
-  cl = $('.current_layout').attr("value")
-  $.each a, (index, value) ->
-    if $(this).attr("value") is cl
-      $(this).addClass "active"
-
-$(document).ready ->
   console.log('ready')
   a = $(".lists a")
   cl = $('.current_layout').attr("value")
@@ -53,3 +36,5 @@ $(document).ready ->
     if $(this).attr("value") is cl
       $(this).addClass "active"
 
+$(document).ready(ready)
+$(document).on('page:load', ready)
