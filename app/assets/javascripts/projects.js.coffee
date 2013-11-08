@@ -30,6 +30,7 @@ $ ->
       console.log $("#current_layout")
 
 $(document).bind 'page:change', ->
+  console.log('page:change')
   a = $(".lists a")
   cl = $('.current_layout').attr("value")
   $.each a, (index, value) ->
@@ -37,6 +38,15 @@ $(document).bind 'page:change', ->
       $(this).addClass "active"
 
 $(document).bind 'page:show', ->
+  console.log('page:show')
+  a = $(".lists a")
+  cl = $('.current_layout').attr("value")
+  $.each a, (index, value) ->
+    if $(this).attr("value") is cl
+      $(this).addClass "active"
+
+$(document).ready ->
+  console.log('ready')
   a = $(".lists a")
   cl = $('.current_layout').attr("value")
   $.each a, (index, value) ->
