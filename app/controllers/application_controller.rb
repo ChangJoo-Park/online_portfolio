@@ -30,5 +30,8 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  def after_update_path_for(resource)
+    session[:previous_url] || projects_path
+  end
 
 end

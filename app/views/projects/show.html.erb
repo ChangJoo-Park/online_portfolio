@@ -12,7 +12,7 @@
 		<%= holder_tag '100%x400','Please add first image', 'social' %>
 	<% else %>
 		<div class="sub_images_wrap">
-			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project.id) %>">
+			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project.id) %>" class="row" >
 				<%= render @project.sub_images.order(:position) %>
 			</ul>
 
@@ -32,50 +32,32 @@
 	<% #TODO Apply css %>
 	<hr>
 	<div class="details">
-		<p>
-			<strong>Title</strong>
-			<%= best_in_place @project, :title, type: :input %>
-		</p>
-		<p>
-			<strong>Description</strong><br/>
-			<%= best_in_place @project, :description, type: :textarea, nil: 'Insert Some text' %>
-		</p>
-		<p>
+		<div class="title inside_detail">
+			<span class="label label-primary">Title</span><br/><br/>
+			<%= best_in_place @project, :title, type: :input  %>
+		</div>
+		<div class="description inside_detail">
+			<span class="label label-primary">Description</span><br/><br/>
+			<%= best_in_place @project, :description, type: :input,  nil: 'Insert Some text'  %>
+		</div>
+		<div class="url inside_detail">
 			<% #TODO Check correct url using ping or something %>
-			<strong>URL</strong><br/>
-			<%= best_in_place @project, :url, type: :input, nil: 'Insert Some text' %>
-		</p>
+			<span class="label label-primary">URL</span><br/><br/>
+			<%= best_in_place @project, :url, type: :input,  nil: 'Insert Some text' %>
+		</div>
 
-		<p>
-			<strong>Work For</strong><br/>
-			<%= best_in_place @project, :work_for, type: :input, nil: 'Insert Some text' %>
-		</p>
+		<div class="work_for inside_detail">
+			<span class="label label-primary">Work For</span><br/><br/>
+			<%= best_in_place @project, :work_for, type: :input,  nil: 'Insert Some text' %>
+		</div>
 
-		<p>
+		<div class="types inside_detail">
 			<% #TODO using comma (,) like tagging system %>
-			<strong>Type</strong><br/>
+			<span class="label label-primary">Type</span><br/><br/>
 			<%= best_in_place @project, :types, type: :input, nil: 'Insert Some text' %>
-		</p>
-	</div>
-<!--
-	<div class="layouts">
-		<strong>Layouts</strong>
-		<% best_in_place @project, :layouts, type: :select, collection: [["layout1", "Layout 1"], ["layout2", "Layout 2"], ["layout3", "Layout 3"]] %><br/>
-		<% image_tag "layout1.png", id: "layout1", class: "layout" %>
-		<% image_tag "layout2.png", id: "layout2", class: "layout" %>
-		<% image_tag "layout3.png", id: "layout3", class: "layout" %>
-	</div>
--->
-	<div class="visibility">
-	<p>
-		<% #TODO Change visibility image %>
-		<strong>visibility</strong><br/>
-		<%= best_in_place @project, :visibility, type: :checkbox, collection: %w[Visible Unvisible] %>
-	</p>
-	</div>
+		</div>
 
-
-
+	</div>
 	<%= javascript_include_tag "sort_sub_images" %>
 	<%= javascript_include_tag "select_layout" %>
 </div>
