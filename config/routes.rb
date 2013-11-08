@@ -1,7 +1,7 @@
 Portfolio::Application.routes.draw do
   get "users/show"
-  resource :users
 
+  put '/users/:id(.:format)' => 'users#update_layout', as: 'update_layout'
   resources :contacts
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
