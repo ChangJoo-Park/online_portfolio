@@ -3,7 +3,7 @@
   <p><%= current_user.email %></p>
   <span class="label label-success">Name</span>
   <p><%= current_user.fullname %></p>
-  <span class="label label-success">Select Lists</span>
+  <span class="label label-success">Layout</span>
   <p><%= hidden_field_tag current_user.layouts, current_user.layouts,class:"current_layout" %></p>
   <div class="list-group lists">
     <%= link_to("List", update_layout_path(current_user, :layouts => "layout1"), :method => :put, remote: true, class: "list-group-item", value: "layout1" ) %>
@@ -12,7 +12,7 @@
     <%= link_to("Layout4", update_layout_path(current_user, :layouts => "layout4"), :method => :put, remote: true, class: "list-group-item", value: "layout4") %>
   </div>
   <hr>
-  <p><%= link_to('Edit registration', edit_user_registration_path) %></p>
+  <p><% link_to('Edit registration', edit_user_registration_path) %></p>
   <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
 
 <% else %>

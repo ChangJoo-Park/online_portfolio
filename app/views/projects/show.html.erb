@@ -9,7 +9,7 @@
 	<hr>
 	<div class="image col-md-12 col-lg-12">
 	<% if @project.sub_images.empty? %>
-		<%= holder_tag '100%x400','Please add first image', 'social' %>
+		<%= holder_tag '100%x400','Please add first image'%>
 	<% else %>
 		<div class="sub_images_wrap">
 			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project.id) %>" class="row" >
@@ -48,12 +48,7 @@
 		<p>
 			<label>Work For</label><br/>
 			<%= best_in_place @project, :work_for, type: :input,  nil: 'Insert Some text' %>
-			<% #TODO using comma (,) like tagging system %>
 		<p>
-		</p>
-			<label>Type</label><br/>
-			<%= best_in_place @project, :types, type: :input, nil: 'Insert Some text' %>
-		</p>
 	</div>
 	<%= javascript_include_tag "sort_sub_images" %>
 	<%= javascript_include_tag "select_layout" %>

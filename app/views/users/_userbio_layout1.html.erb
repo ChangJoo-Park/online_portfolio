@@ -1,0 +1,7 @@
+<p class="name"><%= "#{@user.fullname}'s Project lists." if @user.fullname? %></p>
+<p class="location"><%= "Location : #{@user.location}" if @user.location?%></p>
+<p class="website"> <%= "Website : #{@user.website}" if @user.website?%> </p>
+<p class="facebook"><%= "facebook : #{@user.facebook}" if @user.facebook?%></p>
+<p class="twitter"><%= "twitter : #{@user.twitter}" if @user.twitter?%></p>
+<p class="email"> <%= "Please Contact  #{@user.email}" if @user.email?%></p>
+<p class="bio"><%= @user.bio if @user.bio?%></p>
