@@ -3,7 +3,7 @@
   <p><%= current_user.email %></p>
   <span class="label label-success">Name</span>
   <p><%= current_user.fullname %></p>
-  <span class="label label-success">Select Lists</span>
+  <span class="label label-success">Layout</span>
   <p><%= hidden_field_tag current_user.layouts, current_user.layouts,class:"current_layout" %></p>
   <div class="list-group lists">
     <%= link_to("List", update_layout_path(current_user, :layouts => "layout1"), :method => :put, remote: true, class: "list-group-item", value: "layout1" ) %>

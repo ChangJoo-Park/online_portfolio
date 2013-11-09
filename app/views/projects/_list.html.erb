@@ -10,7 +10,7 @@
     	<%= content_tag_for :li, project do %>
         <div>
           <% if project.sub_images.empty? %>
-            <%= link_to (holder_tag '240x135','Nothing', 'social'),project,class: 'handle' %>
+            <%= link_to (holder_tag '240x135','Nothing'),project,class: 'handle' %>
           <% else %>
             <%= link_to (image_tag project.sub_images.order("position ASC").first.image_url(:thumb)),project,class: 'handle' %>
           <% end  %>

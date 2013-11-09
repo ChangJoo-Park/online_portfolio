@@ -5,6 +5,7 @@ Portfolio::Application.routes.draw do
   resources :contacts
 
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"},:controllers => {:registrations => "my_devise/registrations"}
+
   resources :projects do
     post :sort, on: :collection
     resources :sub_images do

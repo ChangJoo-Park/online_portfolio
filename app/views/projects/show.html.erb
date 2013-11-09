@@ -9,7 +9,7 @@
 	<hr>
 	<div class="image col-md-12 col-lg-12">
 	<% if @project.sub_images.empty? %>
-		<%= holder_tag '100%x400','Please add first image', 'social' %>
+		<%= holder_tag '100%x400','Please add first image'%>
 	<% else %>
 		<div class="sub_images_wrap">
 			<ul id="sub_images" data-update-url="<%= sort_project_sub_images_url(@project.id) %>" class="row" >
