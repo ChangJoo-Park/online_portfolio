@@ -1,20 +1,26 @@
-<ul id="projects" data-update-url="<%= sort_projects_url %>", class="sortable">
-<% # FIXME : 자동으로 이상한게 생김, @projects를 컨트롤러에서 처리해야함 %>
-<% @projects.each do |project| %>
-  <% unless project.id.nil? %>
-  	<%= content_tag_for :li, project do %>
-      <div>
-        <% if project.sub_images.empty? %>
-          <%= link_to (holder_tag '240x140','Nothing', 'social'),project,class: 'handle' %>
-        <% else %>
-          <%= link_to (image_tag project.sub_images.order("position ASC").first.image_url(:thumb)),project,class: 'handle' %>
-        <% end  %>
-        <br/>
-        <%= link_to project.title, project%>
-        <% link_to '', project_path(project), method: :delete, remote: true, class: 'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
-    		<% link_to 'Edit', edit_project_path(project) %>
-      </div>
-    <% end %>
-	<% end %>
-<% end %>
-</ul>
+<div class="projects row tab-pane fade in active border-form-div" id="projects">
+  <h1>My Projects
+    <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary", id: 'btn_new_project' %></span>
+  </h1>
+  <hr>
+  <ul id="projects" data-update-url="<%= sort_projects_url %>", class="sortable">
+  <% # FIXME : 자동으로 이상한게 생김, @projects를 컨트롤러에서 처리해야함 %>
+  <% @projects.each do |project| %>
+    <% unless project.id.nil? %>
+    	<%= content_tag_for :li, project do %>
+        <div>
+          <% if project.sub_images.empty? %>
+            <%= link_to (holder_tag '240x135','Nothing', 'social'),project,class: 'handle' %>
+          <% else %>
+            <%= link_to (image_tag project.sub_images.order("position ASC").first.image_url(:thumb)),project,class: 'handle' %>
+          <% end  %>
+          <br/>
+          <%= link_to project.title, project%>
+          <% link_to '', project_path(project), method: :delete, remote: true, class: 'glyphicon glyphicon-trash delete_project pull-right destroy_image', confirm: 'Are you sure?'%>
+      		<% link_to 'Edit', edit_project_path(project) %>
+        </div>
+      <% end %>
+  	<% end %>
+  <% end %>
+  </ul>
+</div>

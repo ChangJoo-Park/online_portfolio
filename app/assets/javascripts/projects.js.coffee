@@ -30,11 +30,18 @@ ready = ->
       $(this).addClass("active")
       console.log $("#current_layout")
   console.log('ready')
+
   a = $(".lists a")
   cl = $('.current_layout').attr("value")
   $.each a, (index, value) ->
     if $(this).attr("value") is cl
       $(this).addClass "active"
+  $(".nav-tabs").find('li:first-child').addClass('active')
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
+
+
+$("#myTab a").click (e) ->
+  e.preventDefault()
+  $(this).tab "show"

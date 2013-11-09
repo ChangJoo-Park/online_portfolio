@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :layouts) }
       devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:username, :email, :password, :remember_me, :layouts) }
+      devise_parameter_sanitizer.for(:account_update ) { |u| u.permit(:fullname, :username, :location, :website, :facebook, :twitter, :bio, :current_password) }
   end
 
   def store_location
@@ -28,10 +29,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
     root_path
-  end
-
-  def after_update_path_for(resource)
-    session[:previous_url] || projects_path
   end
 
 end

@@ -7,18 +7,18 @@
   <div class="row">
     <div class="col-lg-10 col-md-10 col-sm-10">
       <% if user_signed_in? %>
-      <h1>My Projects
-        <span><%= link_to 'New Project', "#new_project", data: { toggle: "modal" }, class: "btn btn-primary", id: 'btn_new_project' %></span>
-      </h1>
-
       <%= render "modal_new" %>
 
-      <hr>
-      	<div class="projects row">
-      		<%= render 'list' %>
-      	</div>
+      <ul class="nav nav-tabs">
+        <li><a href="#projects" data-toggle="tab">PROJECT</a></li>
+        <li><a href="#profile" data-toggle="tab">PROFILE</a></li>
 
-
+      </ul>
+      <!-- Nav tabs -->
+      <div class="tab-content">
+        <%= render 'list' %>
+        <%= render 'profile' %>
+      </div>
     <% end %>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2 sidebar">

@@ -2,8 +2,9 @@ class ProjectsController < ApplicationController
 	respond_to :html, :json
 	def index
 		if user_signed_in?
-			@projects = current_user.projects.order("position")
-			@project = current_user.projects.new
+			@user = current_user
+			@projects = @user.projects.order("position")
+			@project = @user.projects.new
 		else
 			redirect_to new_user_session_path
 		end

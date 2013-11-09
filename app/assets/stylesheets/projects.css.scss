@@ -13,9 +13,14 @@ body{
   }
 }
 
+.project_index{
+  .nav{
+    margin-top: 30px;
+  }
+}
 #projects{
   list-style-type: none;
-
+  margin-top: 20px;
   .ui-selected{
     background: red;
   }
@@ -31,12 +36,13 @@ body{
       display: block;
       img{
         margin-bottom: 10px;
-        width: 250px;
-        height: 140px;
+         opacity: 1.0;
+         filter: progid:DXImageTransform.Microsoft.Matrix(
+                        M11=1, M12=0, M21=0, M22=1, sizingMethod='auto expand');
+         zoom: 1;
+
       }
       img:hover{
-        border: 5px solid black;
-        border-radius: 5px;
       }
       a{
         color: black;
@@ -46,31 +52,46 @@ body{
         font-weight: bold;
       }
     }
+    div:hover{
+      img{
+         opacity: 0.5;
+         filter: progid:DXImageTransform.Microsoft.Matrix(
+                        M11=0.9961946980917455, M12=-0.08715574274765817, M21=0.08715574274765817, M22=0.9961946980917455,  sizingMethod='auto expand');
+
+         zoom: 1;
+         -moz-box-shadow: 1px 1px 4px #000;
+         -webkit-box-shadow: 1px 1px 4px #000;
+         box-shadow: 1px 1px 4px #000;
+         -moz-transition: all 0.5s ease-out;
+         -o-transition: all 0.5s ease-out;
+         -webkit-transition: all 0.8s ease-out;
+         -ms-transition: all 0.5s ease-out;
+         transition: all 0.5s ease-out;
+      }
+    }
   }
 }
 
 .project-placeholder{
   border: 3px dashed #aaa;
-  height: 180px;
+  height: 175px;
   width: 254px;
   margin: 10px;
-  background: #ccc;
   float: left;
 }
 .trashcan{
   position: absolute;
-  width: 128px;
-  height: 128px;
-  margin-right: 100px;
-  margin-bottom: 100px;
+  width: 300px;
+  height: 300px;
   background: url(image_path('trashcan.png')) no-repeat;
   display: inline-block;
   bottom: 0px;
   right: 0px;
 }
-
 .trashcan:hover{
+  background: url(image_path('trashcan_open.png')) no-repeat;
 }
+
 .none{
   display: none;
 }
@@ -149,5 +170,12 @@ body{
   .inside_detail:last-child{
     border-bottom: none;
     margin-bottom: 0px;
+  }
+}
+
+
+#profile{
+  textarea{
+    resize: none;
   }
 }

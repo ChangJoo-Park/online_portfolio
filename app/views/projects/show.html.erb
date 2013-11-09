@@ -31,32 +31,29 @@
 	</div>
 	<% #TODO Apply css %>
 	<hr>
-	<div class="details">
-		<div class="title inside_detail">
-			<span class="label label-primary">Title</span><br/><br/>
+	<div class="border-form-div">
+		<p>
+			<label>Title</label><br/>
 			<%= best_in_place @project, :title, type: :input  %>
-		</div>
-		<div class="description inside_detail">
-			<span class="label label-primary">Description</span><br/><br/>
+		</p>
+		<p>
+			<label>Description</label><br/>
 			<%= best_in_place @project, :description, type: :input,  nil: 'Insert Some text'  %>
-		</div>
-		<div class="url inside_detail">
 			<% #TODO Check correct url using ping or something %>
-			<span class="label label-primary">URL</span><br/><br/>
+		</p>
+		<p>
+			<label>URL</label><br/>
 			<%= best_in_place @project, :url, type: :input,  nil: 'Insert Some text' %>
-		</div>
-
-		<div class="work_for inside_detail">
-			<span class="label label-primary">Work For</span><br/><br/>
+		</p>
+		<p>
+			<label>Work For</label><br/>
 			<%= best_in_place @project, :work_for, type: :input,  nil: 'Insert Some text' %>
-		</div>
-
-		<div class="types inside_detail">
 			<% #TODO using comma (,) like tagging system %>
-			<span class="label label-primary">Type</span><br/><br/>
+		<p>
+		</p>
+			<label>Type</label><br/>
 			<%= best_in_place @project, :types, type: :input, nil: 'Insert Some text' %>
-		</div>
-
+		</p>
 	</div>
 	<%= javascript_include_tag "sort_sub_images" %>
 	<%= javascript_include_tag "select_layout" %>

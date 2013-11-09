@@ -2,7 +2,7 @@
   <span class="label label-success">E-mail</span>
   <p><%= current_user.email %></p>
   <span class="label label-success">Name</span>
-  <p><%= current_user.username %></p>
+  <p><%= current_user.fullname %></p>
   <span class="label label-success">Select Lists</span>
   <p><%= hidden_field_tag current_user.layouts, current_user.layouts,class:"current_layout" %></p>
   <div class="list-group lists">
