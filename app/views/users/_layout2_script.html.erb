@@ -2,7 +2,11 @@
 $(function() {
   return Galleria.run('.galleria');
 });
-
+$(function(){
+  if ($("#galleria").length == 1) {
+    Galleria.run('.galleria');
+  }
+});
 $(function() {
   var items;
   items = $('.layout2 .project_item');

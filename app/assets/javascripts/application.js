@@ -17,6 +17,7 @@
 //= require jquery_ujs
 //= galleria-1.2.9
 //= galleria.classic
+//= galleria_setup
 //= require best_in_place
 //= require twitter/bootstrap
 //= reuiqre best_in_place.purr

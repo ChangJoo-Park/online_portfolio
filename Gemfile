@@ -70,6 +70,10 @@ gem 'friendly_id'
 
 
 group :production do
-  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'pg'
 end
+gem 'capistrano', '~> 3.0.0'
+gem 'capistrano-bundler', '~> 1.0.0'
+gem 'capistrano-rails', '~> 1.0.0'
+gem 'capistrano-rvm', github: 'capistrano/rvm'
