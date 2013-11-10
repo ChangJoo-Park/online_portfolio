@@ -1,91 +1,32 @@
 <div class="container">
   <div class="body">
     <div class="layout3_user">
-      <h1 class="name">Chang Ju Park</h1>
+      <h1 class="name"><%= @user.fullname if @user.fullname? %></h1>
       <hr>
+      <p class="location"><%= "live in #{@user.location}" if @user.location?%></p>
+      <p class="website"><%=link_to "website", @user.website if @user.website?%></p>
       <p class="contact">
-        <%= image_tag "icons/vintage/mail.png", size:"100x100" %>
-        <%= image_tag "icons/vintage/facebook.png", size:"100x100" %>
-        <%= image_tag "icons/vintage/twitter.png", size:"100x100" %>
+
+        <a href="mailto:<%= @user.email%>"><%= image_tag "icons/vintage/mail.png", size:"100x100" %></a>
+        <a href="<%= @user.facebook %>"><%= image_tag "icons/vintage/facebook.png", size:"100x100" %></a>
+        <a href="<%= @user.twitter %>"><%= image_tag "icons/vintage/twitter.png", size:"100x100" %></a>
       </p>
 
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <p class="description"><%= @user.bio if @user.bio?%></p>
     </div>
     <hr>
-
+    <% @projects.each_with_index do |project, index| %>
     <div>
-      <h2 class="title">Project title</h2>
-      <div class="description">asdlfkajsdlfk</div>
+      <h2 class="title"><%= project.title %></h2>
+      <div class="description"><%= project.description %></div>
       <div class="layout3_list">
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_f9110229.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_f9110229.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs5965.userapi.com/u33085317/-14/x_b3ce2b54.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs5965.userapi.com/u33085317/-14/x_b3ce2b54.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs5965.userapi.com/u33085317/-14/x_fd03805f.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs5965.userapi.com/u33085317/-14/x_fd03805f.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_b27c3de8.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_b27c3de8.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_944551cd.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_944551cd.jpg", :height => 100 %>
+       <% project.sub_images.each_with_index do |sub_image, index| %>
+          <%= link_to sub_image.image_url(:layout2), :rel => :lazybox do %>
+            <%= image_tag sub_image.image_url(:thumb), :height => 100 %>
+          <% end %>
         <% end %>
       </div>
     </div>
-
-    <div>
-      <h2 class="title">Project title</h2>
-      <div class="description">asdlfkajsdlfk</div>
-      <div class="layout3_list">
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_f9110229.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_f9110229.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs5965.userapi.com/u33085317/-14/x_b3ce2b54.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs5965.userapi.com/u33085317/-14/x_b3ce2b54.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs5965.userapi.com/u33085317/-14/x_fd03805f.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs5965.userapi.com/u33085317/-14/x_fd03805f.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_b27c3de8.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_b27c3de8.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_944551cd.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_944551cd.jpg", :height => 100 %>
-        <% end %>
-      </div>
-    </div>
-
-    <div>
-      <h2 class="title">Project title</h2>
-      <div class="description">asdlfkajsdlfk</div>
-      <div class="layout3_list">
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_f9110229.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_f9110229.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs5965.userapi.com/u33085317/-14/x_b3ce2b54.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs5965.userapi.com/u33085317/-14/x_b3ce2b54.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs5965.userapi.com/u33085317/-14/x_fd03805f.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs5965.userapi.com/u33085317/-14/x_fd03805f.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_b27c3de8.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_b27c3de8.jpg", :height => 100 %>
-        <% end %>
-        <%= link_to "http://cs11247.userapi.com/u33085317/-14/x_944551cd.jpg", :rel => :lazybox do %>
-          <%= image_tag "http://cs11247.userapi.com/u33085317/-14/x_944551cd.jpg", :height => 100 %>
-        <% end %>
-      </div>
-    </div>
-
-
+    <% end %>
   </div>
 </div>
