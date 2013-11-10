@@ -29,7 +29,8 @@ ready = ->
       $(this).parent().find(".active").removeClass "active"
       $(this).addClass("active")
       console.log $("#current_layout")
-  console.log('ready')
+
+
 
   a = $(".lists a")
   cl = $('.current_layout').attr("value")
@@ -37,6 +38,9 @@ ready = ->
     if $(this).attr("value") is cl
       $(this).addClass "active"
   $(".nav-tabs").find('li:first-child').addClass('active')
+
+
+
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

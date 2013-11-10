@@ -12,11 +12,11 @@
           </div>
           <div class="detail col-md-6 col-lg-6">
             <h1 class="title"><%= project.title %><%= link_to 'Detail', '#', class: "#{index} pull-right btn btn-primary " %></h1>
-            <div class="etc pull-right">
-                <p class="pull-right"><span><%= project.created_at.strftime("%B %d at %I : %M %p") %></span></p><br/>
-                <p class="pull-right"><span class="glyphicon glyphicon-briefcase"></span> <span><%= project.work_for %> </span></p><br/>
-                <p class="pull-right"><span class="glyphicon glyphicon-globe"></span> <span><%= project.url %> </span></p><br/>
-                <p class="pull-right"> <span class="glyphicon glyphicon-glyphicon-edit"></span><span><%= project.types %></span></p>
+            <div class="etc ">
+                <p class=""><span><%= project.created_at.strftime("%B %d at %I : %M %p") %></span></p><br/>
+                <p class=""><span> <%= project.work_for if project.work_for? %> </span></p><br/>
+                <p class=""><span> <%= project.url if project.url? %> </span></p><br/>
+                <p class=""><span> <%= project.types if project.types? %></span></p>
             </div>
           </div>
           <div class="clear"></div>

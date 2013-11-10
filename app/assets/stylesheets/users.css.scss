@@ -78,7 +78,15 @@ html,body{
     -o-transition: color 500ms linear;
     -ms-transition: color 500ms linear;
     transition: color 500ms linear;
-
+    #userside{
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+  .bio{
+    word-wrap: break-word;
+  }
   .project_item{
     height: 100%;
     border-bottom: 1px solid white;

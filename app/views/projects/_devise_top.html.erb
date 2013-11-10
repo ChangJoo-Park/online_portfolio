@@ -6,13 +6,15 @@
   <span class="label label-success">Layout</span>
   <p><%= hidden_field_tag current_user.layouts, current_user.layouts,class:"current_layout" %></p>
   <div class="list-group lists">
-    <%= link_to("List", update_layout_path(current_user, :layouts => "layout1"), :method => :put, remote: true, class: "list-group-item", value: "layout1" ) %>
+    <%= link_to("Layout1", update_layout_path(current_user, :layouts => "layout1"), :method => :put, remote: true, class: "list-group-item", value: "layout1" ) %>
     <%= link_to("Layout2", update_layout_path(current_user, :layouts => "layout2"), :method => :put, remote: true, class: "list-group-item", value: "layout2") %>
     <%= link_to("Layout3", update_layout_path(current_user, :layouts => "layout3"), :method => :put, remote: true, class: "list-group-item", value: "layout3") %>
-    <%= link_to("Layout4", update_layout_path(current_user, :layouts => "layout4"), :method => :put, remote: true, class: "list-group-item", value: "layout4") %>
   </div>
   <hr>
   <p><% link_to('Edit registration', edit_user_registration_path) %></p>
+  <p>
+    <%= link_to "ViewProject", "/#{current_user.slug}", class: "btn btn-primary",target: "_blank"%>
+  </p>
   <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
 
 <% else %>
