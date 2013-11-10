@@ -138,6 +138,7 @@ GEM
       railties (>= 3.1.0)
     json (1.8.0)
     kgio (2.8.1)
+    lazybox (0.2.6)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -264,6 +265,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   jquery-ui-rails
+  lazybox
   pg
   rails (= 4.0.0)
   rails_12factor (= 0.0.2)

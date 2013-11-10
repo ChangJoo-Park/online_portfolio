@@ -11,6 +11,17 @@
     <%= stylesheet_link_tag 'layout2' %>
     <%= javascript_include_tag "layout2.js" %>
   <% end %>
-
   <%= render 'layout2' %>
+<% end %>
+
+<% if @user.layouts == "layout3" %>
+  <% content_for :head do %>
+    <%= stylesheet_link_tag 'layout3' %>
+    <%= javascript_include_tag "layout3.js" %>
+  <% end %>
+  <% content_for :bodystyle do %>
+    "layout3"
+  <% end %>
+    <%= render 'layout3' %>
+  </div>
 <% end %>

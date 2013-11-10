@@ -60,6 +60,8 @@ gem 'rmagick', '2.13.2', :git=>'http://github.com/rmagick/rmagick.git'
 gem 'carrierwave'
 gem "acts_as_list", git: "git://github.com/swanandp/acts_as_list.git"
 gem 'galleria-rails', github: 'albandiguer/galleria-rails'
+gem 'lazybox'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end

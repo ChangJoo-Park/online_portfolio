@@ -1,0 +1,38 @@
+.layout3{
+  background: url(image_path('layout3_bg.jpg'));
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  .container{
+    background: url(image_path('layout_background.png'));
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 8px 8px 5px #888888;
+    -moz-box-shadow: 8px 8px 5px #888888;
+    box-shadow: 8px 8px 5px #888888;
+    .body{
+      margin: 30px;
+    }
+  }
+
+  .layout3_user{
+    .name{
+      font-family: 'Droid Sans','Open Sans', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align:  right;
+    }
+    .contact{
+      text-align: right;
+    }
+    .bio{
+      font-family: 'Open Sans', sans-serif;
+    }
+  }
+
+
+  .layout3_list{
+
+  }
+}
